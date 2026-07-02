@@ -419,9 +419,9 @@ section {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 24px;
-  max-width: 920px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 800px;
   margin: 50px auto;
   text-align: left;
 }
@@ -429,7 +429,7 @@ section {
 .benefit-card {
   background: var(--bg-light-green);
   border-radius: 10px;
-  min-height: 115px;
+  min-height: auto;
   padding: 32px 42px;
   display: flex;
   gap: 30px;
@@ -439,6 +439,18 @@ section {
 .star-icon {
   font-size: 34px;
   color: var(--text-dark);
+}
+
+/* Modificações exclusivas para o Desktop */
+@media (min-width: 769px) {
+  .benefit-card {
+    padding: 20px 30px;
+    gap: 20px;
+  }
+  
+  .star-icon {
+    font-size: 24px;
+  }
 }
 
 /* DOBRA 06 - MÉTODO E GALERIA */
