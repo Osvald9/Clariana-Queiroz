@@ -1,0 +1,1657 @@
+/* ESTILOS GLOBAIS - MENTORIA EXPLORE */
+
+:root {
+  --bg-main: #F4EFE8;
+  --bg-cream: #F7F2EB;
+  --bg-green: #8F9873;
+  --bg-light-green: #DDE8AA;
+  --bg-dark: #211D0B;
+  --text-dark: #262112;
+  --text-soft: #6E6A5B;
+  --text-light: #FFFFFF;
+  --border-soft: #CEC7BC;
+  --button-green: #DCE7A6;
+  
+  --font-title: "Cormorant Garamond", "Playfair Display", serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1080px, 90%);
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 980px;
+}
+
+/* Tipografia Base */
+.title-xl {
+  font-family: var(--font-title);
+  font-size: clamp(42px, 6vw, 84px);
+  line-height: 0.95;
+  font-weight: 400;
+}
+
+.title-lg {
+  font-family: var(--font-title);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.title-md {
+  font-family: var(--font-title);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--bg-green);
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Botões */
+.btn-primary {
+  background: var(--button-green);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 3px;
+  padding: 18px 42px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* DOBRA 01 - HERO */
+.hero {
+  min-height: 700px;
+  background: var(--bg-main);
+  display: flex;
+  align-items: center;
+  padding: 80px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-image-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-image-el {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 0;
+  right: 12%;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-small {
+  font-family: var(--font-title);
+  letter-spacing: 10px;
+  color: var(--bg-green);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.logo-small span {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 48px;
+  line-height: 0.9;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.04;
+  font-weight: 400;
+  text-transform: uppercase;
+  max-width: 800px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  margin: 24px 0;
+}
+
+.hero-visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hero-person {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+  z-index: 2;
+}
+
+.floating {
+  position: absolute;
+  width: 190px;
+  border-radius: 8px;
+  border: 3px solid var(--bg-green);
+  z-index: 3;
+  object-fit: cover;
+  background: #d4cfc5; /* Placeholder fallback */
+  height: 240px;
+}
+
+.floating-1 {
+  top: 20px;
+  left: 30px;
+  transform: rotate(-8deg);
+}
+
+.floating-2 {
+  right: 30px;
+  top: 240px;
+  transform: rotate(2deg);
+}
+
+.floating-3 {
+  left: 10px;
+  bottom: 120px;
+  transform: rotate(3deg);
+}
+
+/* DOBRA 02 - MARQUEE */
+.marquee {
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-main);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
+.marquee-track {
+  font-size: 16px;
+  color: var(--text-dark);
+  flex-shrink: 0;
+  padding-right: 15px;
+  animation: scroll 180s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* DOBRA 03 - DORES */
+.pain-section {
+  padding: 120px 0;
+  background: var(--bg-main);
+}
+
+.pain-section h2 {
+  font-family: var(--font-title);
+  font-size: 42px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.pain-section > .container > p {
+  max-width: 700px;
+  text-align: center;
+  margin: 20px auto 50px;
+  color: var(--text-soft);
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pain-card {
+  border: 1px solid var(--bg-green);
+  border-radius: 10px;
+  min-height: 170px;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+.icon-x {
+  border: 1px solid var(--bg-green);
+  color: var(--bg-green);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 26px;
+}
+
+/* DOBRA 04 - VERDADE */
+.truth-section {
+  padding: 120px 0;
+  background: var(--bg-green);
+  color: white;
+  text-align: center;
+}
+
+.truth-section h2 {
+  font-family: var(--font-title);
+  font-size: 54px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.truth-section .italic,
+.deliverables-section .italic,
+.faq-section .italic,
+.mentor-section .italic,
+.not-course-section .italic {
+  color: var(--bg-light-green);
+}
+
+.tilted-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 60px 0;
+}
+
+.tilted-gallery figure {
+  position: relative;
+  width: 280px;
+  transform: rotate(-3deg);
+  background: #aab689; /* Placeholder fallback */
+  border-radius: 8px;
+}
+
+.tilted-gallery figure:nth-child(2) {
+  transform: rotate(2deg) translateY(20px);
+}
+
+.tilted-gallery figure:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.tilted-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  height: 380px;
+  object-fit: cover;
+}
+
+.tilted-gallery figcaption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-light-green);
+  color: var(--text-dark);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.truth-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto 50px;
+  text-align: left;
+}
+
+.truth-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.truth-list li::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  color: var(--bg-green);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.truth-section h3 {
+  font-family: var(--font-title);
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.truth-section > p {
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* DOBRA 05 - BENEFÍCIOS (OUTRAS PROFISSIONAIS) */
+.benefits-section {
+  padding: 100px 0;
+  background: var(--bg-main);
+  text-align: center;
+}
+
+.benefits-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 24px;
+  max-width: 920px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.benefit-card {
+  background: var(--bg-light-green);
+  border-radius: 10px;
+  min-height: 115px;
+  padding: 32px 42px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.star-icon {
+  font-size: 34px;
+  color: var(--text-dark);
+}
+
+/* DOBRA 06 - MÉTODO E GALERIA */
+.method-section {
+  padding: 100px 0;
+  background: var(--bg-main);
+}
+
+.method-card {
+  border: 2px solid var(--border-soft);
+  border-radius: 36px;
+  padding: 70px 90px 90px;
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: white;
+}
+
+.method-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.method-line {
+  width: 40px;
+  height: 3px;
+  background: var(--bg-green);
+  margin: 0 auto 30px;
+}
+
+.method-header h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.method-checks {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.method-checks span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.method-checks span::before {
+  content: "✓";
+  color: var(--bg-green);
+}
+
+.photo-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1.1fr 0.9fr;
+  grid-template-rows: 220px 220px;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.photo-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #e2dacd;
+}
+
+.photo-tall {
+  grid-row: span 2;
+}
+
+.photo-wide {
+  grid-column: span 2;
+}
+
+.method-cta {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* DOBRA 07 - PILARES */
+.pillars-section {
+  background: #E7DED1;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.pillars-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+.pillars-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pillar-card {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  border-radius: 14px;
+  border: 2px solid var(--bg-green);
+  padding: 28px;
+  width: 300px;
+  text-align: left;
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-light-green);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.pillar-card h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.pillar-card ul {
+  list-style: none;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.pillar-card li {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.pillar-card li::before {
+  content: "•";
+  color: var(--bg-green);
+}
+
+/* DOBRA 08 - NÍVEIS */
+.levels-section {
+  padding: 110px 0;
+  background: var(--bg-main);
+  text-align: center;
+}
+
+.levels-section h2 {
+  font-family: var(--font-title);
+  font-size: 42px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 920px;
+  margin: 60px auto 40px;
+  text-align: left;
+}
+
+.level-card {
+  min-height: 210px;
+  border-radius: 10px;
+  padding: 34px;
+}
+
+.level-card.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.level-card.green {
+  background: var(--bg-green);
+  color: var(--text-light);
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.level-header h3 {
+  font-family: var(--font-title);
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.level-header span {
+  background: white;
+  color: var(--bg-green);
+  border-radius: 999px;
+  padding: 8px 18px;
+  height: fit-content;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.level-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* DOBRA 09 - RESULTADOS */
+.results-section {
+  padding: 100px 0;
+  background: var(--bg-main);
+  text-align: center;
+}
+
+.results-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+}
+
+.results-carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 50px 0;
+  max-width: 1080px;
+  margin: 0 auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.results-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.result-card {
+  flex: 0 0 360px;
+  height: 500px;
+  background: var(--bg-green);
+  border-radius: 9px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* DOBRA 10 - IDENTIDADE */
+.identity-section {
+  background: var(--bg-main);
+  padding: 90px 0 70px;
+  text-align: center;
+}
+
+.identity-section .tag {
+  background: #F1F7C7;
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.identity-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.identity-section p {
+  color: var(--text-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.arrow-circle {
+  margin: 45px auto;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+/* DOBRA 11 - IMPLEMENTAÇÃO */
+.implementation-section {
+  padding: 100px 0;
+  background: var(--bg-main);
+}
+
+.implementation-card {
+  border: 2px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 42px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto 30px;
+  background: white;
+}
+
+.implementation-card.reverse .card-image {
+  order: -1;
+}
+
+.implementation-card h3 {
+  font-family: var(--font-title);
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+}
+
+.feature-list li {
+  border-bottom: 1px solid var(--border-soft);
+  padding: 17px 0;
+  display: flex;
+  gap: 14px;
+}
+
+.feature-list li::before {
+  content: "→";
+  color: var(--bg-green);
+}
+
+.card-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #e2dacd;
+}
+
+/* DOBRA 12 - ENTREGÁVEIS */
+.deliverables-section {
+  background: var(--bg-green);
+  padding: 110px 0;
+  color: white;
+}
+
+.deliverables-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.deliverable-image {
+  position: relative;
+  height: 360px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #aab689;
+}
+
+.deliverable-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deliverable-image .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.1));
+}
+
+.deliverable-image p {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
+  font-family: var(--font-title);
+  font-size: 28px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.accordion-trigger {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  margin-top: 8px;
+  background: #F5F2EB;
+  color: var(--text-dark);
+  text-align: left;
+  padding: 0 18px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* DOBRA 13 - NÃO É CURSO */
+.not-course-section {
+  background: var(--bg-green);
+  padding: 110px 0;
+}
+
+.not-course-card {
+  background: var(--bg-dark);
+  border: 2px solid rgba(220, 231, 166, 0.25);
+  border-radius: 10px;
+  padding: 80px 90px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.not-course-card h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.compare-row {
+  max-width: 520px;
+  margin: 16px auto;
+  border-radius: 8px;
+  padding: 18px 24px;
+  background: #C9BEB7;
+  color: var(--text-dark);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  font-weight: 600;
+}
+
+.compare-row.light {
+  background: #F4EFE8;
+  color: var(--text-dark);
+}
+
+.not-course-card p {
+  margin-top: 40px;
+  opacity: 0.9;
+}
+
+.not-course-card .btn-primary {
+  margin-top: 30px;
+}
+
+/* DOBRA 14 - APLICAÇÃO */
+.application-process {
+  background: var(--bg-main);
+  padding: 110px 0;
+}
+
+.application-process h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 50px auto;
+}
+
+.process-card {
+  border: 2px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 36px;
+  background: white;
+}
+
+.process-card.full {
+  grid-column: 1 / -1;
+}
+
+.step-pill {
+  float: right;
+  background: #F0ECE3;
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--bg-green);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.process-card h3 {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+.process-card ul {
+  list-style: none;
+  color: var(--text-soft);
+  font-size: 15px;
+}
+
+.process-card li {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.process-card li::before {
+  content: "→";
+  color: var(--bg-green);
+}
+
+/* DOBRA 15 - BÔNUS */
+.bonus-section {
+  background: var(--bg-main);
+  padding: 90px 0;
+}
+
+.bonus-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 55px;
+}
+
+.bonus-card {
+  background: #EFEAE3;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 32px;
+}
+
+.bonus-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: #d4cfc5;
+}
+
+.bonus-card-content {
+  padding: 32px;
+}
+
+.bonus-card-content span {
+  display: inline-block;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+}
+
+.bonus-card h3 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* DOBRA 16 - MENTORA */
+.mentor-section {
+  background: var(--bg-green);
+  color: white;
+  padding: 120px 0;
+}
+
+.mentor-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.mentor-section h2 {
+  font-family: var(--font-title);
+  font-size: clamp(64px, 8vw, 120px);
+  line-height: 0.85;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.mentor-section p {
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.mentor-photo-wrap {
+  background: #B9C48D;
+  padding: 0 0 36px 36px;
+  border-radius: 8px;
+}
+
+.mentor-photo-wrap img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  background: #9fae75;
+  min-height: 600px;
+  object-fit: cover;
+}
+
+/* DOBRA 17 - PERFIS */
+.profile-fit-section {
+  background: var(--bg-main);
+  padding: 120px 0 80px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  position: relative;
+  border-radius: 8px;
+  padding: 60px 42px 50px;
+  min-height: 430px;
+}
+
+.profile-card.light {
+  background: #ECE8DD;
+}
+
+.profile-card.green {
+  background: var(--bg-green);
+  color: white;
+}
+
+.profile-icon {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.1);
+  font-size: 24px;
+}
+
+.profile-card h3 {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-card ul {
+  list-style: none;
+  font-size: 15px;
+}
+
+.profile-card li {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.profile-card.light li::before {
+  content: "×";
+  color: #D64545;
+  font-weight: bold;
+}
+
+.profile-card.green li::before {
+  content: "✓";
+  color: var(--bg-light-green);
+  font-weight: bold;
+}
+
+/* DOBRA 18 - GARANTIA */
+.guarantee-section {
+  background: var(--bg-main);
+  padding: 100px 0;
+}
+
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 80px;
+}
+
+.guarantee-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.guarantee-section p {
+  color: var(--text-soft);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.guarantee-seal {
+  width: 360px;
+  height: 360px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Premium pricing card exactly matching the reference style but in the site's palette */
+.premium-pricing-card {
+  background: #3D3826;
+  border-radius: 24px;
+  padding: 40px 30px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.premium-pricing-btn {
+  background: var(--button-green);
+  color: var(--text-dark) !important;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  padding: 20px 24px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 24px;
+}
+
+.premium-pricing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  filter: brightness(1.05);
+}
+
+.premium-pricing-btn:active {
+  transform: translateY(0);
+}
+
+.guarantee-seal span {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--bg-green);
+  font-family: var(--font-title);
+}
+
+.guarantee-seal::before {
+  content: "DIAS DE GARANTIA";
+  position: absolute;
+  top: 50px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* DOBRA 19 - FORMULÁRIO */
+.form-section {
+  background: var(--bg-main);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-title);
+  font-size: 280px;
+  font-style: italic;
+  color: rgba(0,0,0,.035);
+  pointer-events: none;
+}
+
+.form-section h2 {
+  font-family: var(--font-title);
+  font-size: 46px;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.application-form {
+  position: relative;
+  background: white;
+  max-width: 620px;
+  margin: 40px auto 30px;
+  border-radius: 8px;
+  padding: 60px 48px;
+  text-align: left;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+  z-index: 2;
+}
+
+.application-form label {
+  font-size: 28px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 40px;
+  font-family: var(--font-title);
+}
+
+.application-form input {
+  border: 0;
+  border-bottom: 1px solid #D8D8D8;
+  width: 100%;
+  padding: 16px 0;
+  font-size: 18px;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+/* DOBRA 20 - FAQ */
+.faq-section {
+  background: var(--bg-green);
+  color: white;
+  padding: 100px 0 130px;
+}
+
+.faq-section h2 {
+  font-family: var(--font-title);
+  font-size: 54px;
+  line-height: 1.05;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 70px;
+}
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  padding: 28px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  margin-top: 24px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* RODAPÉ */
+.footer {
+  background: var(--bg-main);
+  padding: 32px 0;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* Mobile Index Button Global Style */
+.mobile-index-toggle {
+  display: none;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 70px 0;
+  }
+
+  .hero-bg-image-wrapper {
+    display: none;
+  }
+
+  .hero-grid,
+  .mentor-grid,
+  .guarantee-grid,
+  .implementation-card,
+  .level-grid,
+  .process-grid,
+  .profile-grid,
+  .bonus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pain-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deliverables-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    height: auto;
+    margin-top: 40px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-person {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .hero-letter {
+    font-size: 500px;
+    transform: translateX(0);
+    text-align: center;
+  }
+
+  .photo-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .photo-mosaic img {
+    height: 260px;
+  }
+
+  .title-xl { font-size: 42px; }
+  .title-lg { font-size: 34px; }
+  .title-md { font-size: 28px; }
+
+  .method-card {
+    padding: 40px 20px;
+  }
+
+  .not-course-card {
+    padding: 40px 20px;
+  }
+
+  .tilted-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .tilted-gallery figure,
+  .tilted-gallery figure:nth-child(2),
+  .tilted-gallery figure:nth-child(3) {
+    transform: none !important;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .watermark {
+    font-size: 120px;
+  }
+
+  /* Mobile Index Navigation Drawer */
+  .mobile-index-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    background: var(--bg-dark);
+    color: var(--button-green);
+    border: 1px solid rgba(220, 231, 166, 0.3);
+    padding: 10px 18px;
+    border-radius: 40px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .mobile-index-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-index-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .mobile-index-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75vh;
+    background: rgba(33, 29, 11, 0.98);
+    border-top: 2px solid var(--bg-green);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    z-index: 1002;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    color: var(--bg-main);
+  }
+
+  .mobile-index-panel.open {
+    transform: translateY(0);
+  }
+
+  .mobile-index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-index-header h3 {
+    font-family: var(--font-title);
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--button-green);
+  }
+
+  .mobile-index-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-index-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px 40px;
+  }
+
+  .mobile-index-intro {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+  }
+
+  .mobile-index-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-index-nav li button {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--bg-main);
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-index-nav li button:active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--button-green);
+  }
+
+  .mobile-index-nav .number {
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--button-green);
+    font-weight: bold;
+    opacity: 0.8;
+  }
+
+  .mobile-index-nav .name {
+    font-weight: 500;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
