@@ -1474,9 +1474,31 @@ section {
     height: 260px;
   }
 
-  .title-xl { font-size: 42px; }
-  .title-lg { font-size: 34px; }
-  .title-md { font-size: 28px; }
+  .title-xl { font-size: 32px; }
+  .title-lg { font-size: 28px; }
+  .title-md { font-size: 24px; }
+
+  /* Reduzir os títulos de todas as seções apenas no mobile para evitar muitas quebras de linha */
+  .pain-section h2,
+  .benefits-section h2,
+  .method-header h2,
+  .pillars-section h2,
+  .results-section h2,
+  .identity-section h2,
+  .levels-section h2 {
+    font-size: 28px !important;
+  }
+
+  .truth-section h2,
+  .faq-section h2 {
+    font-size: 32px !important;
+  }
+
+  .truth-section h3,
+  .level-header h3,
+  .implementation-card h3 {
+    font-size: 26px !important;
+  }
 
   .method-card {
     padding: 40px 20px;
