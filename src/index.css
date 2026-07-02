@@ -1524,8 +1524,19 @@ section {
   .pillars-section h2,
   .results-section h2,
   .identity-section h2,
-  .levels-section h2 {
+  .levels-section h2,
+  .deliverables-section h2,
+  .not-course-card h2,
+  .application-process h2,
+  .bonus-section h2,
+  .guarantee-section h2,
+  .form-section h2 {
     font-size: 28px !important;
+  }
+
+  .mentor-section h2 {
+    font-size: 38px !important;
+    line-height: 0.95;
   }
 
   .truth-section h2,
