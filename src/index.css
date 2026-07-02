@@ -1491,6 +1491,28 @@ section {
     height: 160px;
   }
 
+  /* Ajuste geral de altura para todas as imagens no mobile */
+  .card-image img {
+    height: 300px;
+  }
+
+  .deliverable-image {
+    height: 220px;
+  }
+
+  .result-card {
+    height: 340px;
+  }
+
+  .bonus-card img {
+    height: 200px;
+  }
+
+  .mentor-photo-wrap img {
+    min-height: 380px;
+    height: 380px;
+  }
+
   .title-xl { font-size: 32px; }
   .title-lg { font-size: 28px; }
   .title-md { font-size: 24px; }
