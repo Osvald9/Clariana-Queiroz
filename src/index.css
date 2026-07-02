@@ -1477,13 +1477,18 @@ section {
     text-align: center;
   }
 
+  .method-section {
+    padding: 60px 0;
+  }
+
   .photo-mosaic {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    gap: 8px;
   }
 
   .photo-mosaic img {
-    height: 260px;
+    height: 160px;
   }
 
   .title-xl { font-size: 32px; }
