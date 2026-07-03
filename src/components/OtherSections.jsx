@@ -134,7 +134,7 @@ function PricingCard({ bandeirasImg }) {
         marginBottom: '20px',
         width: '100%'
       }}>
-        <img src={bandeirasImg} alt="Bandeiras de Cartões" style={{ width: '100%', maxWidth: '300px', height: 'auto', opacity: 0.9 }} />
+        <div className="image-placeholder" style={{ width: '100%', maxWidth: '300px', height: '40px', opacity: 0.9 }}>n/a</div>
       </div>
 
       {/* Security footer seals */}
@@ -197,9 +197,9 @@ export default function OtherSections() {
           <h2 className="title-lg">Seu temperamento nasce com você.<br/>Mas seus traumas podem ensinar você a se proteger de formas que parecem <span className="italic">personalidade.</span></h2>
           <p>Essa é a diferença que muda tudo. Temperamento é o seu jeito base de funcionar. Trauma é aquilo que pode distorcer, intensificar ou bloquear esse funcionamento.</p>
           <div className="tilted-gallery">
-            <figure><img src={cardNature} alt="Diagnóstico 1" /><figcaption>Nem tudo é apenas seu jeito.</figcaption></figure>
-            <figure><img src={cardClarity} alt="Diagnóstico 2" /><figcaption>Nem tudo é trauma.</figcaption></figure>
-            <figure><img src={cardStrength} alt="Diagnóstico 3" /><figcaption>Nem toda reação forte é defeito.</figcaption></figure>
+            <figure><div className="image-placeholder" style={{height: '380px'}}>n/a</div><figcaption>Nem tudo é apenas seu jeito.</figcaption></figure>
+            <figure><div className="image-placeholder" style={{height: '380px'}}>n/a</div><figcaption>Nem tudo é trauma.</figcaption></figure>
+            <figure><div className="image-placeholder" style={{height: '380px'}}>n/a</div><figcaption>Nem toda reação forte é defeito.</figcaption></figure>
           </div>
 
           <h3 className="title-md">O problema não é quem você é.</h3>
@@ -237,12 +237,12 @@ export default function OtherSections() {
             </div>
           </div>
           <div className="photo-mosaic">
-            <img src={mosaic1} alt="Mosaic 1" />
-            <img src={mosaic2} alt="Mosaic 2" className="photo-tall" />
-            <img src={mosaic3} alt="Mosaic 3" className="photo-wide" />
-            <img src={mosaic4} alt="Mosaic 4" />
-            <img src={mosaic5} alt="Mosaic 5" />
-            <img src={mosaic6} alt="Mosaic 6" />
+            <div className="image-placeholder">n/a</div>
+            <div className="image-placeholder photo-tall">n/a</div>
+            <div className="image-placeholder photo-wide">n/a</div>
+            <div className="image-placeholder">n/a</div>
+            <div className="image-placeholder">n/a</div>
+            <div className="image-placeholder">n/a</div>
           </div>
           <div className="method-cta">
             <a href="#form-section" className="btn-primary">Quero participar</a>
@@ -351,7 +351,7 @@ export default function OtherSections() {
                 <p style={{fontWeight: 600}}>✦ {impl.highlight}</p>
               </div>
               <div className="card-image">
-                <img src={impl.image} alt={impl.title} />
+                <div className="image-placeholder" style={{height: '100%', minHeight: '300px'}}>n/a</div>
               </div>
             </article>
           ))}
@@ -387,7 +387,7 @@ export default function OtherSections() {
               const bonusImages = [bonusClasses, bonusExercises, bonusBible];
               return (
                 <article className="bonus-card" key={i}>
-                  <img src={bonusImages[i]} alt={b.title} />
+                  <div className="image-placeholder" style={{height: '250px'}}>n/a</div>
                   <div className="bonus-card-content">
                     <span>{b.tag}</span>
                     <h3>{b.title}</h3>
@@ -411,7 +411,7 @@ export default function OtherSections() {
             {landingContent.mentor.text.map((t, i) => <p key={i}>{t}</p>)}
           </div>
           <div className="mentor-photo-wrap">
-            <img src={mentorVertical} alt="Mentora" />
+            <div className="image-placeholder" style={{height: '600px'}}>n/a</div>
           </div>
         </div>
       </section>

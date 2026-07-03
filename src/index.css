@@ -1727,3 +1727,15 @@ section {
   }
 }
 
+.image-placeholder {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #e2dacd !important;
+  color: #6E6A5B !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  border: 2px dashed #CEC7BC !important;
+}
+

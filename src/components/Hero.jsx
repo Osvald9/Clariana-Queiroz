@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero-bg-image-wrapper">
-        <img className="hero-bg-image-el" src={foto1} alt="" />
+        <div className="hero-bg-image-el image-placeholder">n/a</div>
       </div>
       <div className="container hero-grid">
         <div className="hero-copy">
@@ -17,7 +17,7 @@ export default function Hero() {
           <a href="#form-section" className="btn-primary">{hero.buttonLabel}</a>
         </div>
         <div className="hero-visual">
-          <img className="hero-person" src={foto1} alt="Mentora" />
+          <div className="hero-person image-placeholder">n/a</div>
         </div>
       </div>
     </section>
