@@ -456,27 +456,7 @@ export default function OtherSections() {
         </div>
       </section>
 
-      {/* DOBRA 19: FORMULÁRIO */}
-      <section className="form-section" id="form-section">
-        <div className="watermark" style={{fontSize: '120px', left: '10%'}}>RC</div>
-        <div className="container">
-          <h2>Preencha seus dados para entrar na <span className="italic">próxima turma:</span></h2>
-          <div className="application-form">
-            <form action="#" method="POST" id="mentoria-form" onSubmit={(e) => {
-              e.preventDefault();
-              const name = document.getElementById('name').value;
-              if (name) {
-                alert(`Obrigado, ${name}! Aplicação enviada com sucesso.`);
-                document.getElementById('name').value = '';
-              }
-            }}>
-              <label htmlFor="name">{landingContent.form.question}</label>
-              <input type="text" id="name" placeholder="Sua resposta" required />
-              <button type="submit" className="btn-primary" style={{marginTop: '40px', width: '100%', textAlign: 'center'}}>{landingContent.form.buttonLabel}</button>
-            </form>
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }
